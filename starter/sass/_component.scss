@@ -3,7 +3,7 @@
 .logo{
     height: 3.25rem;
 
-    margin-left: 3rem;
+    margin-left: 2rem;
 }
 
 ////////////////////////////////////
@@ -80,26 +80,70 @@
 ////////////////////////////////////
 // User Navigation
 .user-nav {
+    //background-color: hotpink;
+    display: flex;
+    align-items: center; // align items in the cross axis
+    align-self: stretch; // override 它parent (header) 的在cross axis 方向 center, 撑满整个height
+
+    // 指user-nav包含的所有一级child： box1-3
+    & > * {
+        padding: 0 2rem; // top-bottom left-right
+        cursor: pointer;
+        height: 100%;
+    }
+
+    & > *:hover {
+        background-color: var(--color-grey-light-3);
+    }
+
+
     &__icon-box{
-       
+        display: flex;
+        align-items: center;  
+        
+        // 这里呼应child__notification的absolute
+        position: relative;
     }
 
     &__icon{
         height: 2.25rem;
         width: 2.25rem;
+        fill: var(--color-grey-dark-2);
     }
 
     &__notification{
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        // 有时候用50% 会发现当字很大的时候，它不圆。则可以用个很大值，如 100px
+        border-radius: 100px; 
+        background-color: var(--color-primary);
+        color: #fff;
+
+        // 这里使用absolute position 将notification 移到icon 右上方
+        position: absolute; 
+        top: 1.5rem;
+        right: 1.1rem; 
+
+        // Flexbox 不仅对child element 有效， 对text 也有效果. 这里用来center text
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
 
     }
 
     &__user{
-
+        display: flex;
+        align-items: center;  
     }
 
     &__user-photo{
         height: 3.75rem;
         border-radius: 50%;
+
+        margin-right: 1rem;
 
     }
 
