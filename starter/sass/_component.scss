@@ -130,8 +130,6 @@
         justify-content: center;
         align-items: center;
 
-
-
     }
 
     &__user{
@@ -150,7 +148,95 @@
     &__user-name{
 
     }
-
-
-
 }
+
+////////////////////////////////////
+// Side Navigation
+
+.side-nav {
+    font-size: 1.4rem;
+    list-style: none;
+    margin-top: 3.5rem;
+
+    &__item {
+        position:relative;
+
+        // 除了last child 的所有
+        &:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+
+    }
+
+    // ::before element 初始时候的状态
+    &__item::before {
+        content: "";
+        position:absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 3px;
+        background-color: var(--color-primary);
+        // scale Y 是指element 在Y 方向上scale 
+        transform: scaleY(0);
+        // transform 开始的地方
+        transform-origin: center;
+        // transition描述变化如果发生。只针对transform。 transform描述发生什么变化
+        // transform 发生，用时.2s, 
+        //       width delay .2s 后, 发生， 用时.4s
+        transition: transform .2s,
+                    width .4s .2s,
+                    background-color .1s;
+    }
+
+    // item hover 时的 before： 只在hover时出现
+    &__item:hover::before,
+    // item--active时候和before被hover时候是一样的
+    &__item--active::before {
+        transform: scaleY(1);
+        // 在hover时 width 从3px变到100%
+        width: 100%;
+    }
+
+    // 在点击的时候背景颜色淡一点
+    &__item:active::before {
+        background-color: var(--color-primary-light);
+    }
+
+
+
+    &__link:link,
+    &__link:visited {
+        color: var(--color-grey-light-1);
+        // 删除访问过的link的下划线
+        text-decoration: none;
+        text-transform: uppercase;
+        padding: 1.5rem 3rem;
+
+        display: flex;
+        align-items: center;
+
+        // zindex 只有在说明了position relative 以后才起作用
+        position: relative;
+        z-index: 2;
+        
+    }
+
+    &__icon {
+        width: 1.75rem;
+        height: 1.75rem;
+        margin-right: 2rem;
+        // currentColor 是个变量，指的是使用当前element的color，或者它parent的color
+        fill: currentColor;
+    }
+}
+
+////////////////////////////////////
+// Legal content
+.legal {
+    font-size: 1.2rem;
+    color: var(--color-grey-light-4);
+    text-align: center;
+    padding: 2.5rem;
+}
+
