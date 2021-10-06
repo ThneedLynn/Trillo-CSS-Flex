@@ -6,6 +6,14 @@
     box-shadow: var(--shadow-dark);
 
     min-height: 50rem;
+
+    //@media only screen and(max-width: 1200px)
+    //把max-width 写成一个变量
+
+    @media only screen and(max-width: $break-point-largest) {
+        margin: 0;
+
+    }
 }
 
 .header {

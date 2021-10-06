@@ -37,6 +37,11 @@ Grey dark 3: #999
     --line: 1px solid var(--color-grey-light-2);
 }
 
+// 因为css不容许在media query 里使用变量，这里用scss的变量形式
+$break-point-largest: 75rem; //1200px
+
+
+
 * {
     margin: 0;
     padding: 0;
