@@ -29,6 +29,13 @@
     justify-content: space-between;
     align-items: center;
 
+    @media only screen and(max-width: $break-point-smallest) {
+        // 再配合flex wrap，会将search bar 挪到下一行
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 11rem;
+    }
+
 }
 
 .content {
@@ -71,6 +78,10 @@
     @media only screen and(max-width: $break-point-medium) {
         padding: 3rem;
     }
+
+    @media only screen and(max-width: $break-point-small) {
+        flex-direction: column;
+    }
 }
 
 .description {
@@ -84,8 +95,12 @@
 
     @media only screen and(max-width: $break-point-medium) {
         padding: 2rem;
-
         margin-right: 3rem;
+    }
+
+    @media only screen and(max-width: $break-point-small) {
+        margin-right: 0rem;
+        margin-bottom: 3rem;
     }
 
 }

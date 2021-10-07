@@ -47,6 +47,12 @@ $break-point-large: 68.75rem; //1100px
 $break-point-medium: 56.25rem; //900px
 
 
+// 第四个break point 是大概在600px 时
+$break-point-small: 37.5rem; //600px
+
+
+// 第五个break point 是大概在500px 时
+$break-point-smallest: 31.25rem; //500px
 
 * {
     margin: 0;

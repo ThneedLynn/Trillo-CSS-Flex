@@ -18,6 +18,16 @@
     align-items: center;
     justify-content: center;
 
+    @media only screen and(max-width: $break-point-smallest) {
+        // 默认order 都是0，1的话会排在所有0的最后
+        order: 1;
+        // 再配合flex wrap，会将search bar 挪到下一行
+
+        flex: 0 0 100%;
+
+        background-color: var(--color-grey-light-2);
+    }
+
     &__input {
         font-family: inherit;
         font-size: inherit;
@@ -234,6 +244,11 @@
             padding: 2rem;
         }
 
+        @media only screen and(max-width: $break-point-small) {
+            flex-direction: column;
+            padding: 1.5rem .5rem;
+        }
+
         
     }
 
@@ -243,6 +258,12 @@
         margin-right: 2rem;
         // currentColor 是个变量，指的是使用当前element的color，或者它parent的color
         fill: currentColor;
+
+        @media only screen and(max-width: $break-point-small) {
+            margin: 0;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
     }
 }
 
@@ -283,6 +304,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3rem;
+
+        @media only screen and(max-width: $break-point-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars {
@@ -325,6 +351,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        @media only screen and(max-width: $break-point-small) {
+            padding: 0 1.5rem;
+        }
         
     }
 
@@ -333,11 +363,19 @@
         font-weight: 300;
         // 减少一点两个element之间的距离
         margin-bottom: -3px;
+
+        @media only screen and(max-width: $break-point-small) {
+            font-size: 1.8rem;
+        }
     }
 
     &__rating-count {
         font-size: .8rem;
         text-transform: uppercase;
+
+        @media only screen and(max-width: $break-point-small) {
+            font-size: .5rem;
+        }
         
     }
 
