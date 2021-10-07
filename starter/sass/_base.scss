@@ -37,6 +37,23 @@ Grey dark 3: #999
     --line: 1px solid var(--color-grey-light-2);
 }
 
+// 因为css不容许在media query 里使用变量，这里用scss的变量形式
+$break-point-largest: 75rem; //1200px
+
+// 第二个break point 是大概在1100px 时， 通过减小font size 来缩小全局的layout 
+$break-point-large: 68.75rem; //1100px
+
+// 第三个break point 是大概在900px 时， 把左边的导览栏移到上方 
+$break-point-medium: 56.25rem; //900px
+
+
+// 第四个break point 是大概在600px 时
+$break-point-small: 37.5rem; //600px
+
+
+// 第五个break point 是大概在500px 时
+$break-point-smallest: 31.25rem; //500px
+
 * {
     margin: 0;
     padding: 0;
@@ -51,6 +68,11 @@ Grey dark 3: #999
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 1em = 10px, 10px/16px (deafault) = 62.5%
+
+    @media only screen and(max-width: $break-point-large) {
+        font-size: 50%; // 1em = 8px
+
+    }
 }
 
 body {

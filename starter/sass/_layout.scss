@@ -6,6 +6,16 @@
     box-shadow: var(--shadow-dark);
 
     min-height: 50rem;
+
+    //@media only screen and(max-width: 1200px)
+    //把max-width 写成一个变量
+
+    @media only screen and(max-width: $break-point-largest) {
+        margin: 0;
+        max-width: 100%;
+        width: 100%;
+
+    }
 }
 
 .header {
@@ -19,10 +29,22 @@
     justify-content: space-between;
     align-items: center;
 
+    @media only screen and(max-width: $break-point-smallest) {
+        // 再配合flex wrap，会将search bar 挪到下一行
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 11rem;
+    }
+
 }
 
 .content {
     display: flex;
+
+    @media only screen and(max-width: $break-point-medium) {
+        flex-direction: column;
+
+    }
 
 }
 
@@ -52,6 +74,14 @@
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--line);
+
+    @media only screen and(max-width: $break-point-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and(max-width: $break-point-small) {
+        flex-direction: column;
+    }
 }
 
 .description {
@@ -62,6 +92,16 @@
     margin-right: 4.5rem;
 
     font-size: 1.4rem;
+
+    @media only screen and(max-width: $break-point-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and(max-width: $break-point-small) {
+        margin-right: 0rem;
+        margin-bottom: 3rem;
+    }
 
 }
 
