@@ -158,12 +158,21 @@
     list-style: none;
     margin-top: 3.5rem;
 
+    @media only screen and(max-width: $break-point-medium) {
+        display: flex;
+        margin: 0;
+    }
+
     &__item {
         position:relative;
 
         // 除了last child 的所有
         &:not(:last-child) {
             margin-bottom: .5rem;
+        }
+
+        @media only screen and(max-width: $break-point-medium) {
+            flex: 1;
         }
 
     }
@@ -219,6 +228,12 @@
         // zindex 只有在说明了position relative 以后才起作用
         position: relative;
         z-index: 2;
+
+        @media only screen and(max-width: $break-point-medium) {
+            justify-content: center;
+            padding: 2rem;
+        }
+
         
     }
 
@@ -238,6 +253,10 @@
     color: var(--color-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    @media only screen and(max-width: $break-point-medium) {
+        display: none;
+    }
 }
 
 ////////////////////////////////////
@@ -447,7 +466,7 @@
     }
 
     &__friends {
-        
+        display: flex;
     }
 
     &__photo {
@@ -460,7 +479,7 @@
 
         //给它们一个负的margin， 让photo重叠
         &:not(:last-of-type) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 
@@ -476,6 +495,11 @@
     padding: 3rem;
     margin-bottom: 3.5rem;
     position: relative;
+
+    @media only screen and(max-width: $break-point-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
 
 
     &__text {

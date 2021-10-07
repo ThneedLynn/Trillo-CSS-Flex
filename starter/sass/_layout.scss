@@ -12,6 +12,8 @@
 
     @media only screen and(max-width: $break-point-largest) {
         margin: 0;
+        max-width: 100%;
+        width: 100%;
 
     }
 }
@@ -31,6 +33,11 @@
 
 .content {
     display: flex;
+
+    @media only screen and(max-width: $break-point-medium) {
+        flex-direction: column;
+
+    }
 
 }
 
@@ -60,6 +67,10 @@
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--line);
+
+    @media only screen and(max-width: $break-point-medium) {
+        padding: 3rem;
+    }
 }
 
 .description {
@@ -70,6 +81,12 @@
     margin-right: 4.5rem;
 
     font-size: 1.4rem;
+
+    @media only screen and(max-width: $break-point-medium) {
+        padding: 2rem;
+
+        margin-right: 3rem;
+    }
 
 }
 
